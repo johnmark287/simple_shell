@@ -1,4 +1,4 @@
-.TH hsh 1 "November 11, 2023" "1.0" "hsh General Commands Manual"
+.TH hsh 1 "August 10, 2022" "1.0" "hsh General Commands Manual"
 
 .SH NAME
 
@@ -120,14 +120,14 @@ br.
 
 
 .SH BUGS
-No known bugs at this writing (November 11, 2023).
+No known bugs at this writing (August 10, 2022).
 Please report any issues to the authors.
 
 .SH AUTHOR
 
-Johnmark Muhando
+Lewis Safari
 
-Moses Njau
+Mary Muriuki
 
 .SH SEE ALSO
 sh

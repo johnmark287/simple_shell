@@ -10,7 +10,7 @@ ssize_t _puts(char *str)
 {
 	ssize_t num, len;
 
-	num = _string_len(str);
+	num = _strlen(str);
 	len = write(STDOUT_FILENO, str, num);
 	if (len != num)
 	{
@@ -21,11 +21,11 @@ ssize_t _puts(char *str)
 }
 
 /**
- * _string_dup - returns pointer to new mem alloc space which contains copy
+ * _strdup - returns pointer to new mem alloc space which contains copy
  * @strtodup: string to be duplicated
  * Return: a pointer to the new duplicated string
  */
-char *_string_dup(char *strtodup)
+char *_strdup(char *strtodup)
 {
 	char *copy;
 
@@ -45,50 +45,50 @@ char *_string_dup(char *strtodup)
 }
 
 /**
- * _string_cmp - compares two strings
- * @strcmp_one: first string, of two, to be compared in length
- * @strcmp_two: second string, of two, to be compared
+ * _strcmpr - compares two strings
+ * @strcmp1: first string, of two, to be compared in length
+ * @strcmp2: second string, of two, to be compared
  * Return: 0 on success, anything else is a failure
  */
-int _string_cmp(char *strcmp_one, char *strcmp_two)
+int _strcmpr(char *strcmp1, char *strcmp2)
 {
 	int i;
 
 	i = 0;
-	while (strcmp_one[i] == strcmp_two[i])
+	while (strcmp1[i] == strcmp2[i])
 	{
-		if (strcmp_one[i] == '\0')
+		if (strcmp1[i] == '\0')
 			return (0);
 		i++;
 	}
-	return (strcmp_one[i] - strcmp_two[i]);
+	return (strcmp1[i] - strcmp2[i]);
 }
 
 /**
- * _string_cat - concatenates two strings
- * @strc_one: first string
- * @strc_two: second string
+ * _strcat - concatenates two strings
+ * @strc1: first string
+ * @strc2: second string
  * Return: pointer
  */
-char *_string_cat(char *strc_one, char *strc_two)
+char *_strcat(char *strc1, char *strc2)
 {
 	char *newstring;
 	unsigned int len1, len2, newlen, i, j;
 
 	len1 = 0;
 	len2 = 0;
-	if (strc_one == NULL)
+	if (strc1 == NULL)
 		len1 = 0;
 	else
 	{
-		for (len1 = 0; strc_one[len1]; len1++)
+		for (len1 = 0; strc1[len1]; len1++)
 			;
 	}
-	if (strc_two == NULL)
+	if (strc2 == NULL)
 		len2 = 0;
 	else
 	{
-		for (len2 = 0; strc_two[len2]; len2++)
+		for (len2 = 0; strc2[len2]; len2++)
 			;
 	}
 	newlen = len1 + len2 + 2;
@@ -96,20 +96,20 @@ char *_string_cat(char *strc_one, char *strc_two)
 	if (newstring == NULL)
 		return (NULL);
 	for (i = 0; i < len1; i++)
-		newstring[i] = strc_one[i];
+		newstring[i] = strc1[i];
 	newstring[i] = '/';
 	for (j = 0; j < len2; j++)
-		newstring[i + 1 + j] = strc_two[j];
+		newstring[i + 1 + j] = strc2[j];
 	newstring[len1 + len2 + 1] = '\0';
 	return (newstring);
 }
 
 /**
- * _string_len - returns the length of a string
+ * _strlen - returns the length of a string
  * @str: string to be measured
  * Return: length of string
  */
-unsigned int _string_len(char *str)
+unsigned int _strlen(char *str)
 {
 	unsigned int len;
 

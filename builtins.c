@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * check_builtins - checks if the command is a builtin command or not
+ * check_for_builtins - checks if the command is a builtin
  * @vars: variables
  * Return: pointer to the function or NULL
  */
-void (*check_builtins(vars_t *vars))(vars_t *vars)
+void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 {
 	unsigned int i;
 	builtins_t check[] = {
@@ -16,34 +16,34 @@ void (*check_builtins(vars_t *vars))(vars_t *vars)
 		{NULL, NULL}
 	};
 
-	for (i = 0; check[i].f; i++)
+	for (i = 0; check[i].f != NULL; i++)
 	{
-		if (_string_cmp(vars->av[0], check[i].name) == 0)
+		if (_strcmpr(vars->av[0], check[i].name) == 0)
 			break;
 	}
-	if (check[i].f)
+	if (check[i].f != NULL)
 		check[i].f(vars);
 	return (check[i].f);
 }
 
 /**
- * new_exit - exit the program
- * @vars: these are variables
- * Return: nothing
+ * new_exit - exit program
+ * @vars: variables
+ * Return: void
  */
 void new_exit(vars_t *vars)
 {
 	int status;
 
-	if (_string_cmp(vars->av[0], "exit") == 0 && vars->av[1])
+	if (_strcmpr(vars->av[0], "exit") == 0 && vars->av[1] != NULL)
 	{
 		status = _atoi(vars->av[1]);
 		if (status == -1)
 		{
 			vars->status = 2;
 			print_error(vars, ": Illegal number: ");
-			puts_two(vars->av[1]);
-			puts_two("\n");
+			_puts2(vars->av[1]);
+			_puts2("\n");
 			free(vars->commands);
 			vars->commands = NULL;
 			return;
@@ -59,8 +59,8 @@ void new_exit(vars_t *vars)
 
 /**
  * _env - prints the current environment
- * @vars: this is struct of variables
- * Return: nothing.
+ * @vars: struct of variables
+ * Return: void.
  */
 void _env(vars_t *vars)
 {
@@ -75,30 +75,29 @@ void _env(vars_t *vars)
 }
 
 /**
- * new_setenv - create a new environment variable,
- * or edit an already existing variable
+ * new_setenv - create a new environment variable, or edit an existing variable
  * @vars: pointer to struct of variables
  *
- * Return: nothing.
+ * Return: void
  */
 void new_setenv(vars_t *vars)
 {
 	char **key;
 	char *var;
 
-	if (!vars->av[1] || !vars->av[2])
+	if (vars->av[1] == NULL || vars->av[2] == NULL)
 	{
 		print_error(vars, ": Incorrect number of arguments\n");
 		vars->status = 2;
 		return;
 	}
 	key = find_key(vars->env, vars->av[1]);
-	if (!key)
+	if (key == NULL)
 		add_key(vars);
 	else
 	{
 		var = add_value(vars->av[1], vars->av[2]);
-		if (!var)
+		if (var == NULL)
 		{
 			print_error(vars, NULL);
 			free(vars->buffer);
@@ -125,22 +124,22 @@ void new_unsetenv(vars_t *vars)
 
 	unsigned int i, j;
 
-	if (!vars->av[1])
+	if (vars->av[1] == NULL)
 	{
 		print_error(vars, ": Incorrect number of arguments\n");
 		vars->status = 2;
 		return;
 	}
 	key = find_key(vars->env, vars->av[1]);
-	if (!key)
+	if (key == NULL)
 	{
 		print_error(vars, ": No variable to unset");
 		return;
 	}
-	for (i = 0; vars->env[i]; i++)
+	for (i = 0; vars->env[i] != NULL; i++)
 		;
 	newenv = malloc(sizeof(char *) * i);
-	if (!newenv)
+	if (newenv == NULL)
 	{
 		print_error(vars, NULL);
 		vars->status = 127;
@@ -148,7 +147,7 @@ void new_unsetenv(vars_t *vars)
 	}
 	for (i = 0; vars->env[i] != *key; i++)
 		newenv[i] = vars->env[i];
-	for (j = i + 1; vars->env[j]; j++, i++)
+	for (j = i + 1; vars->env[j] != NULL; j++, i++)
 		newenv[i] = vars->env[j];
 	newenv[i] = NULL;
 	free(*key);
