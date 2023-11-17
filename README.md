@@ -13,47 +13,45 @@
 * [License](#license)
 
 ## Description
-simple_shell is a command line interpreter, or shell, in the tradition of the first Unix shell written by Ken Thompson in 1971. This shell is intentionally minimalistic, yet includes the basic functionality of a traditional Unix-like command line user interface. 
-Standard functions and system calls employed in simple_shell include:
-   `access, execve, exit, fork, free, fstat, getline, malloc, perror, signal, stat, wait, write.`
+Simple_shell is a command line interpreter, also known as a shell, inspired by the original Unix shell developed by Ken Thompson in 1971. This shell is deliberately designed to be minimalistic while encompassing essential features of a traditional Unix-like command line interface. It incorporates standard functions and system calls such as `access`, `execve`, `exit`, `fork`, `free`, `fstat`, `getline`, `malloc`, `perror`, `signal`, `stat`, `wait`, and `write`.
 
 ## File Structure
 * [AUTHORS](AUTHORS) - List of contributors to this repository
-* [man_1_simple_shell](man_1_simple_shell) - Manual page for the simple_shell
+* [man_1_simpleShell](man_1_simple_shell) - Manual page for the simple_shell
 * [shell.h](shell.h) - program header file
-* [builtins.c](builtins.c) - major builtin functions
-  * `check_for_builtins` - checks to see if the user's command matches a builtin
-  * `new_exit` - exits the shell with the option of a specified status
+* [mybuiltins.c](mybuiltins.c) - major builtin functions
+  * `checkForBuiltins` - checks to see if the user's command matches a builtin
+  * `newExit` - exits the shell with the option of a specified status
   * `_envs` - prints the shell's environment variables to the standard output
-  * `new_setenv` - initializes a new environment variable, or modifies an existing one
-  * `new_unsetenv` - removes an environment variable
-* [builtins2.c](builtins2.c) - helper functions for the builtins
+  * `newSetenv` - initializes a new environment variable, or modifies an existing one
+  * `newUnsetenv` - removes an environment variable
+* [mybuiltins2.c](mybuiltins2.c) - helper functions for the builtins
   * `addKey` - creates a new environment variable
   * `findKey` - finds an environment variable in the environment array
-  * `add_value` - creates a new environment variable string
+  * `addValue` - creates a new environment variable string
   * `_atois` - converts a string into a non-negative integer
-* [environment.c](environment.c) - functions related to the environment
+* [myenvironment.c](myenvironment.c) - functions related to the environment
   * `makeEnv` - creates the shell's environment from the parent process
   * `freeEnv` - frees the shell's environment
-* [errors.c](errors.c) - functions related to printing errors
+* [myerrors.c](myerrors.c) - functions related to printing errors
   * `printError` - prints an error message to the standard error
   * `_Puts2` - prints a string to the standard error
   * `_Uitoa` - converts an unsigned integer to a string
-* [memory_allocation.c](memory_allocation.c) - memory allocation functions
+* [mymemory_allocation.c](mymemory_allocation.c) - memory allocation functions
   * `_Realloc` - a custom realloc function for arrays of pointers
-* [newStrtok.c](newStrtok.c) - custom strtok and helper functions
+* [mynewStrtok.c](mynewStrtok.c) - custom strtok and helper functions
   * `checkMatch` - checks if a character matches any in a string
   * `newStrtok` - a custom strtok for the shell
-* [path.c](path.c) - functions related to executing commands
+* [mypath.c](mypath.c) - functions related to executing commands
   * `pathExecute` - executes a command in the PATH
   * `findPath` - finds the PATH environment variable
   * `checkForPath` - checks if the command is in the PATH
   * `executeCwd` - executes a command with an absolute path
   * `checkForDir` - checks if the command contains an absolute path
-* [simple_shell.c](simple_shell.c) - essential functions to the shell
+* [mysimple_shell.c](mysimple_shell.c) - essential functions to the shell
   * `main` - the main function of the program
   * `sigHandler` - handles SIGINT
-* [strfunc.c](strfunc.c) - functions related to string manipulation
+* [mystrfunc.c](mystrfunc.c) - functions related to string manipulation
   * `_Puts` - writes a string to standart output
   * `_Strdup` - duplicates a string
   * `_Strcmpr` - compares two strings
@@ -64,14 +62,14 @@ Standard functions and system calls employed in simple_shell include:
 
 ## Requirements
 
-simple_shell is designed to run in the `Ubuntu 14.04 LTS` linux environment and to be compiled using the GNU compiler collection v. `gcc 4.8.4` with flags`-Wall, -Werror, -Wextra, and -pedantic.`
+simple_shell, which is designed to run in the `Ubuntu 14.04 LTS` linux environment and is to be compiled using the GNU compiler collection v. `gcc 4.8.4` with flags`-Wall, -Werror, -Wextra, and -pedantic.`
 
 ## Installation
 
    - Clone this repository: `git clone "https://github.com/johnmark287/simple_shell.git"`
    - Change directories into the repository: `cd simple_shell`
    - Compile: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
-   - Run the shell in interactive mode: `./hsh`
+   - Run shell in the interactive mode: `./hsh`
    - Or run the shell in non-interactive mode: example `echo "pwd" | ./hsh`
 
 ## Usage

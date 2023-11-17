@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * check_for_builtins - checks if the command is a builtin
+ * checkForBuiltins - checks if the command is a builtin
  * @vars: variables
  * Return: pointer to the function or NULL
  */
@@ -27,7 +27,7 @@ void (*checkForBuiltins(var_t *myvars))(var_t *myvars)
 }
 
 /**
- * new_exit - exit program
+ * newExit - exit program
  * @vars: variables
  * Return: void
  */
@@ -75,7 +75,7 @@ void _envs(var_t *myvars)
 }
 
 /**
- * new_setenv - create a new environment variable, or edit an existing variable
+ * newSetenv - create a new environment variable, or edit an existing variable
  * @vars: pointer to struct of variables
  *
  * Return: void
@@ -113,7 +113,7 @@ void newSetenv(var_t *myvars)
 }
 
 /**
- * new_unsetenv - remove an environment variable
+ * newUnsetenv - remove an environment variable
  * @vars: pointer to a struct of variables
  *
  * Return: void
