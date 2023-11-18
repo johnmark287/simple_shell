@@ -2,8 +2,8 @@
 
 /**
  * printError - prints error messages to standard error
- * @vars: pointer to struct of variables
- * @msg: message to print
+ * @myvars: pointer to struct of variables
+ * @mymsg: message to print
  *
  * Return: void
  */
@@ -28,7 +28,7 @@ void printError(var_t *myvars, char *mymsg)
 
 /**
  * _Puts2 - prints a string to standard error
- * @str: string to print
+ * @mystr: string to print
  *
  * Return: void
  */
@@ -48,7 +48,7 @@ void _Puts2(char *mystr)
 
 /**
  * _Uitoa - converts an unsigned int to a string
- * @count: unsigned int to convert
+ * @mycount: unsigned int to convert
  *
  * Return: pointer to the converted string
  */

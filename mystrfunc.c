@@ -2,7 +2,7 @@
 
 /**
  * _Puts - writes a string to standard output
- * @str: string to write
+ * @mystr: string to write
  *
  * Return: number of chars printed or -1 on failure
  */
@@ -22,7 +22,7 @@ ssize_t _Puts(char *mystr)
 
 /**
  * _Strdup - returns pointer to new mem alloc space which contains copy
- * @strtodup: string to be duplicated
+ * @mystrtodup: string to be duplicated
  * Return: a pointer to the new duplicated string
  */
 char *_Strdup(char *mystrtodup)
@@ -45,9 +45,9 @@ char *_Strdup(char *mystrtodup)
 }
 
 /**
- * _Strcmpr - compares two strings
- * @strcmp1: first string, of two, to be compared in length
- * @strcmp2: second string, of two, to be compared
+ * _Strcmpr - compares two strings.
+ * @mystrcmp1: first string, of two, to be compared in length.
+ * @mystrcmp2: second string, of two, to be compared.
  * Return: 0 on success, anything else is a failure
  */
 int _Strcmpr(char *mystrcmp1, char *mystrcmp2)
@@ -67,7 +67,7 @@ int _Strcmpr(char *mystrcmp1, char *mystrcmp2)
 /**
  * _Strcat - concatenates two strings
  * @mystrc1: first string
- * @strc2: second string
+ * @mystrc2: second string
  * Return: pointer
  */
 char *_Strcat(char *mystrc1, char *mystrc2)
@@ -106,7 +106,7 @@ char *_Strcat(char *mystrc1, char *mystrc2)
 
 /**
  * _Strlen - returns the length of a string
- * @str: string to be measured
+ * @mystr: string to be measured
  * Return: length of string
  */
 unsigned int _Strlen(char *mystr)

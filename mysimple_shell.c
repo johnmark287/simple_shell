@@ -5,7 +5,7 @@ unsigned int sig_flag;
 
 /**
  * sigHandler - handles ^C signal interupt
- * @uuv: unused variable (required for signal function prototype)
+ * @myuuv: unused variable (required for signal function prototype)
  *
  * Return: void
  */

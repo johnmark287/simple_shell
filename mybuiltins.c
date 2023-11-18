@@ -2,7 +2,7 @@
 
 /**
  * checkForBuiltins - checks if the command is a builtin
- * @vars: variables
+ * @myvars: variables
  * Return: pointer to the function or NULL
  */
 void (*checkForBuiltins(var_t *myvars))(var_t *myvars)
@@ -28,7 +28,7 @@ void (*checkForBuiltins(var_t *myvars))(var_t *myvars)
 
 /**
  * newExit - exit program
- * @vars: variables
+ * @myvars: variables
  * Return: void
  */
 void newExit(var_t *myvars)
@@ -59,7 +59,7 @@ void newExit(var_t *myvars)
 
 /**
  * _envs - prints the current environment
- * @vars: struct of variables
+ * @myvars: struct of variables
  * Return: void.
  */
 void _envs(var_t *myvars)
@@ -76,7 +76,7 @@ void _envs(var_t *myvars)
 
 /**
  * newSetenv - create a new environment variable, or edit an existing variable
- * @vars: pointer to struct of variables
+ * @myvars: pointer to struct of variables
  *
  * Return: void
  */
@@ -114,7 +114,7 @@ void newSetenv(var_t *myvars)
 
 /**
  * newUnsetenv - remove an environment variable
- * @vars: pointer to a struct of variables
+ * @myvars: pointer to a struct of variables
  *
  * Return: void
  */

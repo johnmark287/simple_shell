@@ -2,7 +2,7 @@
 
 /**
  * addKey - create a new environment variable
- * @vars: pointer to struct of variables
+ * @myvars: pointer to struct of variables
  *
  * Return: void
  */
@@ -40,8 +40,8 @@ void addKey(var_t *myvars)
 
 /**
  * findKey - finds an environment variable
- * @env: array of environment variables
- * @key: environment variable to find
+ * @myenv: array of environment variables
+ * @mykey: environment variable to find
  *
  * Return: pointer to address of the environment variable
  */
@@ -63,8 +63,8 @@ char **findKey(char **myenv, char *mykey)
 
 /**
  * addValue - create a new environment variable string
- * @key: variable name
- * @value: variable value
+ * @mykey: variable name
+ * @myvalue: variable value
  *
  * Return: pointer to the new string;
  */
@@ -89,7 +89,7 @@ char *addValue(char *mykey, char *myvalue)
 
 /**
  * _atois - converts a string into an integer
- * @str: string to convert
+ * @mystr: string to convert
  *
  * Return: the integer value, or -1 if an error occurs
  */

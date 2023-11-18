@@ -2,7 +2,7 @@
 
 /**
  * makeEnv - make the shell environment from the environment passed to main
- * @env: environment passed to main
+ * @myenv: environment passed to main
  *
  * Return: pointer to the new environment
  */
@@ -27,7 +27,7 @@ char **makeEnv(char **myenv)
 
 /**
  * freeEnv - free the shell's environment
- * @env: shell's environment
+ * @myenv: shell's environment
  *
  * Return: void
  */

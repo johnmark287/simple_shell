@@ -2,8 +2,8 @@
 
 /**
  * pathExecute - executes a command in the path
- * @command: full path to the command
- * @vars: pointer to struct of variables
+ * @mycommand: full path to the command
+ * @myvars: pointer to struct of variables
  *
  * Return: 0 on succcess, 1 on failure
  */
@@ -43,7 +43,7 @@ int pathExecute(char *mycommand, var_t *myvars)
 
 /**
  * findPath - finds the PATH variable
- * @env: array of environment variables
+ * @myenv: array of environment variables
  *
  * Return: pointer to the node that contains the PATH, or NULL on failure
  */
@@ -66,7 +66,7 @@ char *findPath(char **myenv)
 
 /**
  * checkForPath - checks if the command is in the PATH
- * @vars: variables
+ * @myvars: variables
  *
  * Return: void
  */
@@ -116,7 +116,7 @@ void checkForPath(var_t *myvars)
 
 /**
  * executeCwd - executes the command in the current working directory
- * @vars: pointer to struct of variables
+ * @myvars: pointer to struct of variables
  *
  * Return: 0 on success, 1 on failure
  */
@@ -163,7 +163,7 @@ int executeCwd(var_t *myvars)
 
 /**
  * checkForDir - checks if the command is a part of a path
- * @str: command
+ * @mystr: command
  *
  * Return: 1 on success, 0 on failure
  */

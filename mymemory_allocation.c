@@ -2,8 +2,8 @@
 
 /**
  * _Realloc - reallocates a pointer to double the space
- * @ptr: pointer to the old array
- * @size: pointer to number of elements in the old array
+ * @myptr: pointer to the old array
+ * @mysize: pointer to number of elements in the old array
  *
  * Return: pointer to the new array
  */
