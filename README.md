@@ -119,7 +119,7 @@ drwxrwxr-x  8 vagrant vagrant  4096 Jul 19 22:34 .git
 -rwxrwxr-x  1 vagrant vagrant 32287 Jul 19 22:34 hsh
 -rw-rw-r--  1 vagrant vagrant  1792 Jul 19 22:12 man_1_simple_shell
 -rw-rw-r--  1 vagrant vagrant   484 Jul 15 20:09 mymemory_allocation.c
--rw-rw-r--  1 vagrant vagrant  1273 Jul 18 21:00 mynew_strtok.c
+-rw-rw-r--  1 vagrant vagrant  1273 Jul 18 21:00 mynewStrtok.c
 -rw-rw-r--  1 vagrant vagrant  3427 Jul 19 22:06 mypath.c
 -rw-rw-r--  1 vagrant vagrant  2347 Jul 19 22:49 README.md
 -rw-rw-r--  1 vagrant vagrant  1769 Jul 19 22:04 shell.h
